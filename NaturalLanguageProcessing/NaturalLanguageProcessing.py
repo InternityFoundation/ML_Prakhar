@@ -47,8 +47,14 @@ TP=cm[1][1]
 FN=cm[1][0]
 print "FP:",FP,"   FN:",FN
 print "TP:",TP,"   TN:",TN
-accuracy = (TP + TN)*100 / (TP + TN + FP + FN)
+accuracy =(float) (TP + TN) / (TP + TN + FP + FN)
 print "Accuracy:",accuracy
+precision =(float)(TP) / (TP + FP)
+print "Precision:",precision
+recall = (float)(TP) / (TP + FN)
+print "Recall:",recall
+f1_Score =(float) (2 * precision * recall) / (precision + recall)
+print "F1 Score:",f1_Score
 
 #With the Naive Bayes Classifier
 print "\nResults with Naive Bayes Classifier "
@@ -66,8 +72,14 @@ TP=cm[1][1]
 FN=cm[1][0]
 print "FP:",FP,"   FN:",FN
 print "TP:",TP,"   TN:",TN
-accuracy = (TP + TN)*100 / (TP + TN + FP + FN)
+accuracy =(float) (TP + TN)/ (TP + TN + FP + FN)
 print "Accuracy:",accuracy
+precision =(float)(TP) / (TP + FP)
+print "Precision:",precision
+recall = (float)(TP) / (TP + FN)
+print "Recall:",recall
+f1_Score =(float) (2 * precision * recall) / (precision + recall)
+print "F1 Score:",f1_Score
 
 #With the Decision Tree Classifier
 print "\nResults with Decision Tree Classifier"
@@ -85,5 +97,11 @@ TP=cm[1][1]
 FN=cm[1][0]
 print "FP:",FP,"   FN:",FN
 print "TP:",TP,"   TN:",TN
-accuracy = (TP + TN)*100 / (TP + TN + FP + FN)
+accuracy = (float) (TP + TN) / (TP + TN + FP + FN)
 print "Accuracy:",accuracy
+precision =(float)(TP) / (TP + FP)
+print "Precision:",precision
+recall = (float)(TP) / (TP + FN)
+print "Recall:",recall
+f1_Score =(float) (2 * precision * recall) / (precision + recall)
+print "F1 Score:",f1_Score
