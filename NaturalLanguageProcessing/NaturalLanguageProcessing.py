@@ -105,3 +105,27 @@ recall = (float)(TP) / (TP + FN)
 print "Recall:",recall
 f1_Score =(float) (2 * precision * recall) / (precision + recall)
 print "F1 Score:",f1_Score
+
+#With the K-NN Classifier
+print "\nResults with KNN Classifier"
+from sklearn.neighbors import KNeighborsClassifier
+classifier=KNeighborsClassifier(n_neighbors=5,metric='minkowski',p=2) #p=2 for the euclidian_distance
+classifier.fit(X_train,y_train)
+y_pred=classifier.predict(X_test)
+
+from sklearn.metrics import confusion_matrix
+cm = confusion_matrix(y_test, y_pred)
+TN=cm[0][0]
+FP=cm[0][1]
+TP=cm[1][1]
+FN=cm[1][0]
+print "FP:",FP,"   FN:",FN
+print "TP:",TP,"   TN:",TN
+accuracy = (float) (TP + TN) / (TP + TN + FP + FN)
+print "Accuracy:",accuracy
+precision =(float)(TP) / (TP + FP)
+print "Precision:",precision
+recall = (float)(TP) / (TP + FN)
+print "Recall:",recall
+f1_Score =(float) (2 * precision * recall) / (precision + recall)
+print "F1 Score:",f1_Score
